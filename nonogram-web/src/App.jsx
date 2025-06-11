@@ -33,7 +33,7 @@ export default function App() {
     if (!rowsText.trim() || !colsText.trim()) return;
     const rows = rowsText.trim().split("\n").map((l) => l.trim().split(/\s+/).map(Number));
     const cols = colsText.trim().split("\n").map((l) => l.trim().split(/\s+/).map(Number));
-    const res = await fetch("http://127.0.0.1:8000/solve_manual", {
+    const res = await fetch("https://nonogram-backend-production.up.railway.app/solve_manual", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ rows, cols }),
